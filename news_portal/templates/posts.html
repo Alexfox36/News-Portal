@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All news
+{% endblock title %}
+
+{% block content %}
+<h1> Все новости </h1>
+<div class="contaiter">
+    <div class="row", style="margin-top:50px;">
+        {% for post in posts_list %}
+        <div class="col-sm">
+            <div class="card border-secondary md-3" style="max-width: 20rem;">
+                <div class="card-header">{{post.post_title}}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{post.post_author}}</h4>
+                    <p class="card-text">{{post.post_content}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
