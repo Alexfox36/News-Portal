@@ -1,0 +1,47 @@
+use1r= User.objects.create_user('Aleksandr')
+use2r= User.objects.create_user('Ivan')
+
+auth1 = Author.user.objects.create(user='use1r', author_rating = 1.3)
+auth1 = Author.user.objects.create(user='use1r', author_rating = 2.3)
+
+cat1 = Categories(category_name="art")
+cat2 = Categories(category_name='famous people')
+cat3 = Categories(category_name='Countries')
+cat4 = Categories(category_name='Music')
+
+pst1 = Post.objects.create(post_title = "Новости о важных людях",
+                           position = Post.news,
+                           post_content = "некое содержание о важных людях" ),
+      post_category = famous people, art
+
+pst2 = Post.objects.create(post_title = "Новости об искусстве",
+                           position = Post.news,
+                           post_content = "некое содержание о картинах" )
+      post_category = Music, art
+
+pst3 = Post.objects.create(post_title = "Срочные новости",
+                           position = Post.post,
+                           post_content = "Срочные новости на повестке дня" )
+      post_category = Countries, Music
+
+
+
+cmnt1 = Post.Comment.objects.create(comment_title = "Это обычный коммнетарий",
+       comment_rating = 5.0 )
+
+cmnt2 = Post.Comment.objects.create(comment_title = "Крутой коммент",
+       comment_rating 1.0)
+
+cmnt3 = Post.Comment.objects.create(comment_title = " Важный коммент",
+       comment_rating = 2.0 )
+
+cmnt4 = Post.Comment.objects.create(comment_title = "Самый важый комментарий",
+       comment_rating = 3.0 )
+
+Comment.objects.get(pk=1).like()
+Comment.objects.get(pk=2).dislike()
+
+User.objects.get.all().update_rating()
+
+User.objects.order_by(username).first()
+
